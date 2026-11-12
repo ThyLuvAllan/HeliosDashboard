@@ -1,0 +1,168 @@
+
+/*
+  HELIOS Background
+
+  margin: Removes the default space around the page.
+  min-height: Makes the page at least as tall as the screen.
+  font-family: Sets the font used for text.
+  color: Sets the default text color.
+  background: Creates a teal-to-black gradient.
+  background-attachment: Keeps the background fixed while scrolling.
+*/
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+
+  background: linear-gradient(
+    to bottom,
+    #65d6cf 0%,
+    #238f91 25%,
+    #103b42 55%,
+    #050505 100%
+  );
+
+  background-attachment: fixed;
+}
+
+/*
+  Header
+
+  Centers the header text.
+  Adds 60px vertical padding and 20px horizontal padding.
+*/
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/*
+  Main Content
+
+  Adds 30px of space inside the main content area.
+*/
+
+main {
+  padding: 30px;
+}
+
+/*
+  Footer Credits
+
+  Centers the credits.
+  Adds spacing above and inside the footer.
+  Uses light gray text at 14px.
+*/
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 100px;
+  color: #9caeae;
+  font-size: 14px;
+}
+
+/*
+  Glass Cards
+
+  Creates translucent cards with rounded corners,
+  a subtle teal outline, and a blurred background.
+*/
+
+section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(101, 214, 207, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+/*
+  Dashboard Grid
+
+  Arranges dashboard cards into two equal columns.
+  Adds 20px of space between cards.
+*/
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/*
+  Navigation
+
+  Uses Flexbox to center navigation links
+  and allows them to wrap on smaller screens.
+*/
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}
+
+/*
+  Navigation Links
+
+  Removes underlines and gives links
+  translucent backgrounds and teal outlines.
+*/
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(101, 214, 207, 0.25);
+  transition: background 0.3s;
+}
+
+/*
+  Navigation Hover
+
+  Changes the background when the mouse
+  moves over a navigation link.
+*/
+
+.navbar a:hover {
+  background: rgba(101, 214, 207, 0.2);
+}
+
+/*
+  Mobile Responsive Design
+
+  Changes the dashboard to one column
+  when the screen is 700px wide or smaller.
+*/
+
+@media (max-width: 700px) {
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  header {
+    padding: 40px 15px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+}

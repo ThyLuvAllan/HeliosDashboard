@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HELIOS</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript reference to allow use of JavaScript -->
+
+    <script src="script.js" defer></script>
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <header>
+      <h1>HELIOS</h1>
+      <p>Intelligent Solar Energy Monitoring</p>
+
+      <!-- NAVIGATION -->
+      <nav class="navbar">
+        <a href="#overview">Overview</a>
+        <a href="#insights">Insights</a>
+        <a href="#history">History</a>
+        <a href="#environment">Environment</a>
+      </nav>
+    </header>
+
+    <!-- MAIN DASHBOARD -->
+    <main>
+      <div class="dashboard">
+
+        <!-- ROBOT OVERVIEW -->
+        <section id="overview">
+          <h2>Robot Overview</h2>
+
+          <p>Robot Status: --</p>
+          <p>Robot Location: --</p>
+          <p>Robot Speed: --</p>
+          <p>Robot Battery: --%</p>
+        </section>
+
+        <!-- ENERGY OVERVIEW -->
+        <section>
+          <h2>Energy Overview</h2>
+
+          <p>Potential Money Saved: $<span id="totalMoneySaved">0.00</span></p>
+          <p>Energy Saved: -- kWh</p>
+          <p>Solar Station: --%</p>
+        </section>
+          
+        <!-- SOLAR CONDITIONS -->
+        <section id="solar">
+        <h2>Solar Conditions</h2>
+
+        <p>Cloud Cover: <span id="cloudCover">--</span>%</p>
+
+        <p>Solar Radiation: <span id="solarRadiation">--</span> W/m²</p>
+
+        <p>Daylight Status: <span id="daylightStatus">--</span></p>
+        </section>
+
+
+        <!-- ENVIRONMENT -->
+        <section id="environment">
+          <h2>Environmental Conditions</h2>
+
+          <!-- LOCATION INPUT -->
+          <input
+            type="text"
+            id="locationInput"
+            placeholder="Enter city or ZIP code"
+          >
+
+          <button id="locationButton">
+            Update Location
+          </button>
+
+          <p>Selected Location: <span id="selectedLocation">--</span></p>
+          <p>Outside Temperature: <span id="outsideTemp">--</span> °F</p>
+          <p>Outside Humidity: <span id="outsideHumidity">--</span>%</p>
+        </section>
+
+        <!-- ENERGY INSIGHTS -->
+       <section id="insights">
+        <h2>Energy Insights</h2>
+
+        <p>Lighting Recommendation:
+            <span id="lightingRecommendation">--</span>
+        </p>
+
+        <p>Room Lighting: <span id="lightStatus">ON</span></p>
+
+        <button id="lightButton">Turn Lights OFF</button>
+
+        <p>Potential Savings Per Hour:
+            $<span id="hourlySavings">0.00</span>
+        </p>
+
+        <p>Potential Savings Per Day:
+            $<span id="dailySavings">0.00</span>
+        </p>
+
+        <p>Potential Savings Per Month:
+            $<span id="monthlySavings">0.00</span>
+        </p>
+        </section>
+
+        <!-- SYSTEM HISTORY -->
+        <section id="history">
+          <h2>System History</h2>
+
+          <p>Today's Energy Usage: -- kWh</p>
+          <p>Today's Savings: $0.00</p>
+          <p>Last System Update: --</p>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 HELIOS</p>
+      <p>Designed by Allan Acosta & Evan Lopez</p>
+      <p>Solar Energy • Engineering Design</p>
+    </footer>
+
+  </body>
+</html>
