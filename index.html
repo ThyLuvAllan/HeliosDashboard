@@ -1,17 +1,31 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HELIOS</title>
+
+  <title>HELIOS | Solar Energy Dashboard</title>
+
   <link rel="stylesheet" href="style.css">
+
   <script type="module" src="script.js"></script>
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header>
+
+    <img
+      src="HELIOS-logo.png"
+      alt="HELIOS Solar Logo"
+      class="logo"
+    >
+
     <h1>HELIOS</h1>
+
     <p>Intelligent Solar Energy Monitoring</p>
 
     <nav class="navbar">
@@ -20,41 +34,103 @@
       <a href="#history">History</a>
       <a href="#environment">Environment</a>
     </nav>
+
   </header>
 
+  <!-- MAIN DASHBOARD -->
   <main>
+
     <div class="dashboard">
 
       <!-- ROBOT OVERVIEW -->
       <section id="overview">
+
         <h2>Robot Overview</h2>
-        <p>Robot Status: <span id="robotStatus">Connecting...</span></p>
-        <p>Robot Location: <span id="robotLocation">--</span></p>
-        <p>Robot Speed: <span id="robotSpeed">--</span> m/s</p>
-        <p>Robot Heading: <span id="robotHeading">--</span>°</p>
-        <p>Robot Battery: <span id="robotBattery">--</span>%</p>
-        <p>Battery Voltage: <span id="robotVoltage">--</span> V</p>
-        <p>Firebase Connection: <span id="firebaseStatus">Connecting...</span></p>
+
+        <p>
+          Robot Status:
+          <span id="robotStatus">Connecting...</span>
+        </p>
+
+        <p>
+          Robot Location:
+          <span id="robotLocation">--</span>
+        </p>
+
+        <p>
+          Robot Speed:
+          <span id="robotSpeed">--</span> m/s
+        </p>
+
+        <p>
+          Robot Heading:
+          <span id="robotHeading">--</span>°
+        </p>
+
+        <p>
+          Robot Battery:
+          <span id="robotBattery">--</span>%
+        </p>
+
+        <p>
+          Battery Voltage:
+          <span id="robotVoltage">--</span> V
+        </p>
+
+        <p>
+          Firebase Connection:
+          <span id="firebaseStatus">Connecting...</span>
+        </p>
+
       </section>
 
       <!-- ENERGY OVERVIEW -->
       <section>
+
         <h2>Energy Overview</h2>
-        <p>Potential Money Saved: $<span id="totalMoneySaved">0.00</span></p>
-        <p>Energy Saved: <span id="energySaved">--</span> kWh</p>
-        <p>Solar Station: <span id="solarStation">--</span>%</p>
+
+        <p>
+          Potential Money Saved:
+          $<span id="totalMoneySaved">0.00</span>
+        </p>
+
+        <p>
+          Energy Saved:
+          <span id="energySaved">--</span> kWh
+        </p>
+
+        <p>
+          Solar Station:
+          <span id="solarStation">--</span>%
+        </p>
+
       </section>
 
       <!-- SOLAR CONDITIONS -->
       <section id="solar">
+
         <h2>Solar Conditions</h2>
-        <p>Cloud Cover: <span id="cloudCover">--</span>%</p>
-        <p>Solar Radiation: <span id="solarRadiation">--</span> W/m²</p>
-        <p>Daylight Status: <span id="daylightStatus">--</span></p>
+
+        <p>
+          Cloud Cover:
+          <span id="cloudCover">--</span>%
+        </p>
+
+        <p>
+          Solar Radiation:
+          <span id="solarRadiation">--</span> W/m²
+        </p>
+
+        <p>
+          Daylight Status:
+          <span id="daylightStatus">--</span>
+        </p>
+
       </section>
 
       <!-- ENVIRONMENT -->
       <section id="environment">
+
         <h2>Environmental Conditions</h2>
 
         <input
@@ -63,15 +139,30 @@
           placeholder="Enter city or ZIP code"
         >
 
-        <button id="locationButton">Update Location</button>
+        <button id="locationButton">
+          Update Location
+        </button>
 
-        <p>Selected Location: <span id="selectedLocation">--</span></p>
-        <p>Outside Temperature: <span id="outsideTemp">--</span> °F</p>
-        <p>Outside Humidity: <span id="outsideHumidity">--</span>%</p>
+        <p>
+          Selected Location:
+          <span id="selectedLocation">--</span>
+        </p>
+
+        <p>
+          Outside Temperature:
+          <span id="outsideTemp">--</span> °F
+        </p>
+
+        <p>
+          Outside Humidity:
+          <span id="outsideHumidity">--</span>%
+        </p>
+
       </section>
 
       <!-- ENERGY INSIGHTS -->
       <section id="insights">
+
         <h2>Energy Insights</h2>
 
         <p>
@@ -79,38 +170,68 @@
           <span id="lightingRecommendation">--</span>
         </p>
 
-        <p>Room Lighting: <span id="lightStatus">ON</span></p>
+        <p>
+          Room Lighting:
+          <span id="lightStatus">ON</span>
+        </p>
 
-        <button id="lightButton">Turn Lights OFF</button>
+        <button id="lightButton">
+          Turn Lights OFF
+        </button>
 
-        <p>Potential Savings Per Hour:
+        <p>
+          Potential Savings Per Hour:
           $<span id="hourlySavings">0.00</span>
         </p>
 
-        <p>Potential Savings Per Day:
+        <p>
+          Potential Savings Per Day:
           $<span id="dailySavings">0.00</span>
         </p>
 
-        <p>Potential Savings Per Month:
+        <p>
+          Potential Savings Per Month:
           $<span id="monthlySavings">0.00</span>
         </p>
+
       </section>
 
       <!-- SYSTEM HISTORY -->
       <section id="history">
+
         <h2>System History</h2>
-        <p>Today's Energy Usage: <span id="todayEnergyUsage">--</span> kWh</p>
-        <p>Today's Savings: $<span id="todaySavings">0.00</span></p>
-        <p>Last System Update: <span id="lastSystemUpdate">--</span></p>
+
+        <p>
+          Today's Energy Usage:
+          <span id="todayEnergyUsage">--</span> kWh
+        </p>
+
+        <p>
+          Today's Savings:
+          $<span id="todaySavings">0.00</span>
+        </p>
+
+        <p>
+          Last System Update:
+          <span id="lastSystemUpdate">--</span>
+        </p>
+
       </section>
 
     </div>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
+
     <p>© 2026 HELIOS</p>
+
     <p>Designed by Allan Acosta &amp; Evan Lopez</p>
+
     <p>Solar Energy • Engineering Design</p>
+
   </footer>
+
 </body>
 </html>
