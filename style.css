@@ -1,229 +1,273 @@
 
-/*
-  HELIOS — Solar Energy Dashboard
-  Solar red, orange, and warm white palette
-*/
-
-:root {
-  --red: #D62828;
-  --red-dark: #A71919;
-  --orange: #F77F00;
-  --orange-light: #FFB347;
-  --white: #FFFDF9;
-  --cream: #FFF4E6;
-  --text: #2B1712;
-  --muted: #765B50;
-}
+/* =====================================
+   HELIOS SOLAR DASHBOARD
+   ===================================== */
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at 85% 5%, #FFB34755, transparent 28rem),
-    linear-gradient(180deg, #FFF9F1, #FFF0DF, #FFFDF9);
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    /* RED / ORANGE / GOLD GRADIENT */
+    background: linear-gradient(
+        160deg,
+        #D62828 0%,
+        #F77F00 25%,
+        #FFB347 45%,
+        #7D2519 70%,
+        #100706 100%
+    );
+
+    background-attachment: fixed;
 }
 
-/* HEADER */
+/* =====================================
+   LOGO WATERMARK IN BACKGROUND
+   ===================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image: url("HELIOS-logo-transparent.png");
+    background-repeat: no-repeat;
+    background-position: center 100px;
+    background-size: 500px auto;
+
+    opacity: 0.13;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* KEEP WEBSITE CONTENT ABOVE BACKGROUND */
+
+header,
+.navbar,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================================
+   HEADER
+   ===================================== */
 
 header {
-  text-align: center;
-  padding: 45px 20px 35px;
-  color: white;
-  background: linear-gradient(135deg, var(--red), #E94B2C, var(--orange));
-  border-bottom: 5px solid var(--orange-light);
-}
-
-/* HELIOS LOGO */
-
-.logo {
-  width: 150px;
-  max-width: 40%;
-  height: auto;
-  display: block;
-  margin: 0 auto 15px;
-  object-fit: contain;
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: transparent;
 }
 
 header h1 {
-  margin: 0 0 10px;
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  text-shadow: 0 3px 0 #50100A30;
+    font-size: 4rem;
+    margin: 10px 0;
+    font-weight: bold;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 header p {
-  margin: 0;
-  font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
-/* NAVIGATION */
+/* =====================================
+   NAVIGATION
+   ===================================== */
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 24px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
 }
 
 .navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 17px;
-  border-radius: 999px;
-  background: #FFFFFF22;
-  border: 1px solid #FFFFFF66;
-  font-weight: 700;
-  transition: 0.2s;
+    color: white;
+    text-decoration: none;
+
+    padding: 12px 22px;
+    border-radius: 30px;
+
+    background: rgba(40, 10, 5, 0.35);
+    border: 1px solid rgba(255, 179, 71, 0.6);
+
+    backdrop-filter: blur(10px);
+    transition: 0.25s;
 }
 
 .navbar a:hover {
-  background: #FFFFFF44;
-  transform: translateY(-2px);
+    background: linear-gradient(
+        135deg,
+        #D62828,
+        #F77F00
+    );
+
+    transform: translateY(-2px);
 }
 
-/* MAIN */
+/* =====================================
+   MAIN CONTENT
+   ===================================== */
 
 main {
-  padding: 30px 24px;
+    padding: 30px;
+    max-width: 1500px;
+    margin: auto;
 }
+
+/* =====================================
+   DASHBOARD GRID
+   ===================================== */
 
 .dashboard {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  max-width: 1400px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
 }
 
-/* DASHBOARD CARDS */
+/* =====================================
+   DASHBOARD CARDS
+   ===================================== */
 
 section {
-  min-width: 0;
-  padding: 24px;
-  background: #FFFDF9EE;
-  border: 1px solid #D6282828;
-  border-top: 4px solid var(--orange);
-  border-radius: 18px;
-  box-shadow: 0 12px 32px #68250F18;
+    padding: 25px;
+
+    background: rgba(255, 253, 249, 0.95);
+    color: #321710;
+
+    border-radius: 15px;
+    border: 2px solid #F77F00;
+    border-top: 5px solid #D62828;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+
+    backdrop-filter: blur(12px);
 }
 
 section h2 {
-  margin: 0 0 18px;
-  color: var(--red);
-  font-size: 1.35rem;
+    color: #D62828;
+    margin-top: 0;
+}
+
+section h3 {
+    color: #A71919;
 }
 
 section p {
-  line-height: 1.65;
-  margin: 10px 0;
+    line-height: 1.6;
 }
 
-section span {
-  font-weight: 700;
-}
-
-/* INPUTS */
-
-input[type="text"] {
-  width: min(100%, 340px);
-  padding: 12px 14px;
-  margin: 8px 8px 8px 0;
-  color: var(--text);
-  background: white;
-  border: 1px solid #E9B9A5;
-  border-radius: 10px;
-  font: inherit;
-}
-
-input[type="text"]:focus {
-  outline: 3px solid #F77F0033;
-  border-color: var(--orange);
-}
-
-/* BUTTONS */
+/* =====================================
+   BUTTONS
+   ===================================== */
 
 button {
-  padding: 11px 16px;
-  border: 0;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--red), #E94B2C);
-  color: white;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 5px 12px #D628282E;
-  transition: 0.18s;
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #D62828,
+        #F77F00
+    );
+
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+
+    cursor: pointer;
+    transition: 0.25s;
 }
 
 button:hover {
-  filter: brightness(1.08);
-  transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(214,40,40,0.35);
 }
 
-button:active {
-  transform: translateY(0);
+/* =====================================
+   INPUTS
+   ===================================== */
+
+input,
+select,
+textarea {
+    padding: 12px;
+    border: 1px solid #F77F00;
+    border-radius: 8px;
+    font-size: 1rem;
+    max-width: 100%;
 }
 
-button:focus-visible {
-  outline: 3px solid var(--orange-light);
-  outline-offset: 3px;
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #FFB347;
 }
 
-/* FOOTER */
+/* =====================================
+   SAVINGS / IMPORTANT DATA
+   ===================================== */
+
+#totalMoneySaved,
+#energySaved,
+#hourlySavings,
+#dailySavings,
+#monthlySavings {
+    color: #D62828;
+    font-weight: bold;
+}
+
+/* =====================================
+   FOOTER
+   ===================================== */
 
 footer {
-  text-align: center;
-  padding: 36px 20px;
-  margin-top: 42px;
-  color: var(--muted);
-  font-size: 14px;
+    text-align: center;
+    padding: 30px;
+    background: rgba(10, 5, 3, 0.4);
+    color: #FFF4E6;
+    font-size: 14px;
 }
 
-footer p {
-  margin: 7px 0;
-}
-
-/* MOBILE */
+/* =====================================
+   MOBILE
+   ===================================== */
 
 @media (max-width: 700px) {
-  .dashboard {
-    grid-template-columns: 1fr;
-  }
 
-  main {
-    padding: 18px 14px;
-  }
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
 
-  header {
-    padding: 35px 16px 28px;
-  }
+    main {
+        padding: 15px;
+    }
 
-  .logo {
-    width: 110px;
-  }
+    header h1 {
+        font-size: 2.5rem;
+    }
 
-  .navbar {
-    gap: 8px;
-  }
+    body::before {
+        background-size: 85% auto;
+        background-position: center 80px;
+    }
 
-  .navbar a {
-    padding: 9px 13px;
-  }
-
-  section {
-    padding: 18px;
-  }
+    section {
+        padding: 20px;
+    }
 }
