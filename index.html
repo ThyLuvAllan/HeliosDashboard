@@ -48,75 +48,41 @@
 
       <p id="authStatus">Not signed in</p>
 
-      <div id="loginForm">
+      <section id="firebaseLogin">
 
-        <input
-          type="email"
-          id="loginEmail"
-          placeholder="Email address"
-        >
+  <h2>HELIOS Account</h2>
 
-        <input
-          type="password"
-          id="loginPassword"
-          placeholder="Password"
-        >
+  <p id="authStatus">Not signed in</p>
 
-        <button id="loginButton">
-          Sign In
-        </button>
+  <form id="loginForm">
 
-      </div>
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="Email address"
+      autocomplete="username"
+      required
+    >
 
-      <button id="logoutButton" hidden>
-        Sign Out
-      </button>
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Password"
+      autocomplete="current-password"
+      required
+    >
 
-    </section>
+    <button type="submit" id="loginButton">
+      Sign In
+    </button>
 
-    <div class="dashboard">
+  </form>
 
-      <!-- ROBOT OVERVIEW -->
-      <section id="overview">
+  <button id="logoutButton" hidden>
+    Sign Out
+  </button>
 
-        <h2>Robot Overview</h2>
-
-        <p>
-          Robot Status:
-          <span id="robotStatus">Connecting...</span>
-        </p>
-
-        <p>
-          Robot Location:
-          <span id="robotLocation">--</span>
-        </p>
-
-        <p>
-          Robot Speed:
-          <span id="robotSpeed">--</span> m/s
-        </p>
-
-        <p>
-          Robot Heading:
-          <span id="robotHeading">--</span>°
-        </p>
-
-        <p>
-          Robot Battery:
-          <span id="robotBattery">--</span>%
-        </p>
-
-        <p>
-          Battery Voltage:
-          <span id="robotVoltage">--</span> V
-        </p>
-
-        <p>
-          Firebase Connection:
-          <span id="firebaseStatus">Connecting...</span>
-        </p>
-
-      </section>
+</section>
 
       <!-- ENERGY OVERVIEW -->
       <section>
