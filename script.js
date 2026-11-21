@@ -44,7 +44,12 @@ const loginButton = document.getElementById("loginButton");
 const logoutButton = document.getElementById("logoutButton");
 
 // SIGN IN
-loginButton.addEventListener("click", async function () {
+// SIGN IN
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", async function (event) {
+
+  event.preventDefault();
 
   const email = loginEmail.value.trim();
   const password = loginPassword.value;
@@ -59,20 +64,14 @@ loginButton.addEventListener("click", async function () {
 
   try {
 
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+    await signInWithEmailAndPassword(auth, email, password);
 
     loginPassword.value = "";
 
   } catch (error) {
 
     console.error("Login error:", error);
-
-    authStatus.textContent =
-      "Sign-in failed. Check your credentials.";
+    authStatus.textContent = "Sign-in failed: " + error.code;
 
   } finally {
 
@@ -81,7 +80,6 @@ loginButton.addEventListener("click", async function () {
   }
 
 });
-
 // SIGN OUT
 logoutButton.addEventListener("click", async function () {
 
